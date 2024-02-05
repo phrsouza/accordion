@@ -16,13 +16,26 @@ const faqs = [
 ];
 
 export default function App() {
-  return (
-    <div>
-      <Accordion />
-    </div>
-  );
+  return <Accordion />;
 }
 
 function Accordion() {
-  return <div>TODO</div>;
+  return (
+    <ul className="accordion">
+      {faqs.map((faq) => (
+        <AccordionItem faq={faq} />
+      ))}
+    </ul>
+  );
+}
+
+function AccordionItem({ number, title, description }) {
+  return (
+    <li className="item">
+      <span className="number">01</span>
+      <span className="title">Fooo</span>
+      <icon className="title">+</icon>
+      <div className="content-box">foo</div>
+    </li>
+  );
 }
