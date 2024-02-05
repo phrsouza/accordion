@@ -16,10 +16,11 @@ export function Accordion() {
           open={index === selectedItem ? true : false}
           number={index}
           title={faq.title}
-          description={faq.text}
           onSelectedItem={handleSelectedItem}
           key={index}
-        />
+        >
+          {faq.text}
+        </AccordionItem>
       ))}
     </ul>
   );

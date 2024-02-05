@@ -4,6 +4,7 @@ export function AccordionItem({
   title,
   description,
   onSelectedItem,
+  children,
 }) {
   return (
     <li
@@ -14,7 +15,7 @@ export function AccordionItem({
       <span className="title">{title}</span>
       <span className="icon">{open ? "-" : "+"}</span>
       <div className="content-box" hidden={!open}>
-        {description}
+        {children}
       </div>
     </li>
   );
