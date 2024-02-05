@@ -51,7 +51,7 @@ function AccordionItem({ open, number, title, description, onSelectedItem }) {
     >
       <span className="number">{"0" + (number + 1)}</span>
       <span className="title">{title}</span>
-      <span className="title">+</span>
+      <span className="title">{open ? "-" : "+"}</span>
       <div className="content-box" hidden={!open}>
         {description}
       </div>
