@@ -1,3 +1,4 @@
+import { useState } from "react";
 import "./styles.css";
 
 const faqs = [
@@ -20,22 +21,40 @@ export default function App() {
 }
 
 function Accordion() {
+  const [selectedItem, setSelectedItem] = useState(null);
+
+  function handleSelectedItem(index) {
+    index === selectedItem ? setSelectedItem(null) : setSelectedItem(index);
+  }
+
   return (
     <ul className="accordion">
-      {faqs.map((faq) => (
-        <AccordionItem faq={faq} />
+      {faqs.map((faq, index) => (
+        <AccordionItem
+          open={index === selectedItem ? true : false}
+          number={index}
+          title={faq.title}
+          description={faq.text}
+          onSelectedItem={handleSelectedItem}
+          key={index}
+        />
       ))}
     </ul>
   );
 }
 
-function AccordionItem({ number, title, description }) {
+function AccordionItem({ open, number, title, description, onSelectedItem }) {
   return (
-    <li className="item">
-      <span className="number">01</span>
-      <span className="title">Fooo</span>
-      <icon className="title">+</icon>
-      <div className="content-box">foo</div>
+    <li
+      className={open ? "item open" : "item"}
+      onClick={() => onSelectedItem(number)}
+    >
+      <span className="number">{"0" + (number + 1)}</span>
+      <span className="title">{title}</span>
+      <span className="title">+</span>
+      <div className="content-box" hidden={!open}>
+        {description}
+      </div>
     </li>
   );
 }
