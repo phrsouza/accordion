@@ -2,7 +2,6 @@ export function AccordionItem({
   open,
   number,
   title,
-  description,
   onSelectedItem,
   children,
 }) {
