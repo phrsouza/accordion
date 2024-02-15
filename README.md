@@ -42,6 +42,8 @@ localhost:3000
 
 This project is deployed to https://accordion-ma7i4kbdp-pedro-souzas-projects-608e0ba6.vercel.app/ whenever the default branch is updated.
 
+![image](https://github.com/phrsouza/accordion/assets/2446492/be78f145-b818-4d00-9942-0abc5cd48f4e)
+
 ## License
 
 This project is licensed under [MIT License](https://opensource.org/licenses/MIT).
